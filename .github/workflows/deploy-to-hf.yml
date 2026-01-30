@@ -18,7 +18,7 @@ jobs:
           git config --global user.name "github-actions"
 
           git clone https://harishsahadev:${HF_TOKEN}@huggingface.co/spaces/harishsahadev/toxic-comment-detector space
-          rsync -av --delete --exclude='.git' --exclude='.github' ./ space/
+          rsync -av --delete --exclude='.git' --exclude='.github' ./ space/ || true
           cd space
           git add .
           git commit -m "Update Space" || true
